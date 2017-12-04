@@ -1,0 +1,16 @@
+body {
+  padding: 20px;
+  font-family: 'Libre Baskerville', serif;
+  font-size: 16px;
+}
+
+#translate-me {
+  width: 50%;
+  display: block;
+  font-size: 1em;
+}
+
+#submit {
+  font-size: 1em;
+  margin: 15px 0; 
+}

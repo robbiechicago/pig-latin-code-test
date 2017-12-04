@@ -23,7 +23,13 @@
     <?php  
 
     if ($_GET['submit'] && $_GET['translate-me'] != '') {
-      echo 'The English word <strong><em>'.$word.'</em></strong> translated to Pig Latin is "<strong><em>'.$new_word.'</em></strong>"';
+      if ($new_word == 'space') {
+        echo 'One word at a time please!';
+      } elseif ($new_word == 'non-alpha') {
+        echo 'Only letters please folks!';
+      } else {
+        echo 'The English word <strong><em>'.$word.'</em></strong> translated to Pig Latin is "<strong><em>'.$new_word.'</em></strong>"';
+      }
     }
     ?>
 

@@ -17,8 +17,31 @@
       return false;
     }
 
+    //filter out any submissions with more than one word
+    function find_spaces($word) {
+      $pos = strpos($word, ' ');
+      if ($pos) {
+        return true;
+      }
+    }
+
+    // filter out non-alphabetical characters
+    function find_non_alpha($word) {
+      if (!preg_match('/^[a-z\s]+$/i', $word)) {
+        return true;
+      }
+    }
+
     //translation method
     public function translate($word) {
+
+      if ($this->find_non_alpha($word)) {
+        return 'non-alpha';
+      }
+
+      if ($this->find_spaces($word)) {
+        return 'space';
+      }
 
       //if word begins with a vowel
       if ($this->vowel_sound_start($word)) {
